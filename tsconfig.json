@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "jsx": "preserve",
-    "outDir": "./build",
     "allowJs": true,
     "target": "es5",
     "lib": [
@@ -20,9 +19,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "include": [
-    "./src/**/*"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": [
     "node_modules"
   ]
