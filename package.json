@@ -17,7 +17,7 @@
   "scripts": {
     "test": "test",
     "dev": "next dev",
-    "build": "webpack --mode development"
+    "build": "next build"
   },
   "repository": {
     "type": "git",
