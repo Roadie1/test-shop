@@ -1,10 +1,12 @@
 import * as React from "react";
+import { Header, Menu } from "../components";
+import styles from './front-page.module.scss';
 
-const FrontPage = ({}) => {
-    const message: string = "ello World";
+const FrontPage: React.FC<{}> = ({}) => {
     return (
-        <div>
-            { message }
+        <div className={styles.FrontPage}>
+            <Header />
+            <Menu />
         </div>
     );
 }

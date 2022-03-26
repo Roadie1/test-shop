@@ -1,0 +1,13 @@
+.Container {
+    position: relative;
+    background-color: teal;
+    padding: 48px;
+    display: flex;
+    justify-content: center;
+
+    .Title {
+        font-size: 7rem;
+        font-weight: 600;
+        color: white;
+    }
+}
