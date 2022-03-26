@@ -1,7 +1,8 @@
 .Container {
     display: flex;
-    padding: 8px 24px;
+    padding: 8px 48px;
     background: lightgray;
+    justify-content: space-between;
 
     .Catalog {
         display: flex;
@@ -29,25 +30,70 @@
     }
 
     .Search {
-        flex-grow: 1;
-        border: 1px;
+        width: 50%;
+        border-width: 1px;
+        border-style: solid;
         border-color: black;
         margin-left: 16px;
         display:flex;
         justify-content: space-between;
 
-        .Icon {
-            width: 24px;
-            height: 24px;
+        .SearchButton {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 0 8px;
+            background-color: aqua;
+
+            .Icon {
+                width: 24px;
+                height: 24px;
+            }
         }
+
+
 
         .Input {
             width: 100%;
             outline: none;
             font-size: 1rem;
+            border: none;
 
             &:hover {
                 background-color: lightgrey;
+            }
+        }
+    }
+
+    .User {
+        margin-left: 16px;
+        display: flex;
+
+        .AuthorizationContainer {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            color: blue;
+
+            .Login {
+                margin-right: 16px;
+            }
+            .Button {
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .UserInfo {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            color: green;
+
+            .Cart {
+                margin-right: 8px;
             }
         }
     }
