@@ -1,0 +1,77 @@
+.Container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background-color: whitesmoke;
+
+    .Sorting {
+        display: flex;
+        font-size: 1rem;
+
+        .SortValue {
+            position: relative;
+            color: blue;
+            text-decoration-line: underline;
+            cursor: pointer;
+
+            .SortOptions {
+                position: absolute;
+                left: -8px;
+                top: 20px;
+                background-color: white;
+                border-radius: 8px;
+                padding: 8px;
+                display: flex;
+                flex-direction: column;
+                width: max-content;
+
+                .SortOption {
+                    color: black;
+                    margin-bottom: 4px;
+                    padding: 4px;
+                    border-radius: 8px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    &:hover {
+                        background-color: blue;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    .List {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 1em;
+        row-gap: 1em;      
+        padding: 16px;
+        background-color: white;
+
+        .ItemContainer {
+            display: flex;
+            flex-direction: column;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid;
+        }
+
+        .ItemImage {
+            width: 100%;
+            height: 150px;
+            background-color: red;
+            border-radius: 8px;
+        }
+
+        .Name {
+            margin-top: 8px;
+            font-size: 1.5rem;
+        }
+        .Price {
+            font-size: 1.5rem;
+        }
+    }
+}
