@@ -43,6 +43,14 @@
             }
         }
     }
+
+    .EmptyList {
+        text-align: center;
+        font-size: 2rem;
+        padding: 16px;
+        background-color: white;
+    }
+
     .List {
         display: grid;
         grid-template-columns: repeat(5, 1fr);

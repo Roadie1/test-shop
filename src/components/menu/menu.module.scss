@@ -4,15 +4,43 @@
     background: lightgray;
     justify-content: space-between;
 
-    .Catalog {
-        display: flex;
-        align-items: center;
-        padding: 8px;
-        background-color: blue;
-        color: white;
-        font-size: 1rem;
-        border-radius: 8px;
-        cursor: pointer;
+    .CatalogContainer {
+        position: relative;
+
+        .CatalogButton {
+            display: flex;
+            align-items: center;
+            padding: 8px;
+            background-color: blue;
+            color: white;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .Catalog {
+            position: absolute;
+            left: 0px;
+            top: 48px;
+            border-radius: 8px;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 1em;
+            row-gap: 1em;
+            padding: 8px;
+            z-index: 10;
+
+            .CatalogOption {
+                color: black;
+                padding: 4px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color:aqua;
+                }
+            }
+        }
 
         .Icon {
             width: 24px;

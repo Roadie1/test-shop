@@ -44,25 +44,35 @@ const ItemList: React.FC<{ items: Item[] }> = ({ items }) => {
     }
 
     const renderItems = () => {
-        return items.map(item => {
+        if (items.length === 0) {
             return (
-                <div className={styles.ItemContainer} key={'item-' + item.id}>
-                    <div className={styles.ItemImage} />
-                    <div className={styles.Name}>{item.name}</div>
-                    <div className={styles.Price}>{item.price}</div>
+                <div className={styles.EmptyList}>
+                    There is no items with this name
                 </div>
             )
-        });
-    }
+        }
+
+        return (
+            <div className={styles.List}>
+                {items.map(item => {
+                    return (
+                        <div className={styles.ItemContainer} key={'item-' + item.id}>
+                            <div className={styles.ItemImage} />
+                            <div className={styles.Name}>{item.name}</div>
+                            <div className={styles.Price}>{item.price}</div>
+                        </div>
+                    )
+                })}
+            </div>
+        )
+    };
 
     return (
         <div className={styles.Container}>
             <div className={styles.Sorting}>
                 Sort by&nbsp;{getSorting()}
             </div>
-            <div className={styles.List}>
-                {renderItems()}
-            </div>
+            {renderItems()}
         </div>
     );
 }

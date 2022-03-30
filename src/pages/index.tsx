@@ -1,16 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Header, Menu, ItemList } from "../components";
 import { Item } from "../components/item-list/item.model";
 import styles from './front-page.module.scss';
 
-const FrontPage: React.FC<{ items: Item[]}> = ({ items }) => {
-    // const [items, setItems] = useState<Item[]>([{ id: '1', name: '', price: '0', image: '', category: '' }]);
+const FrontPage: React.FC<{ items: Item[] }> = ({ items }) => {
+    const [showingItems, setShowingItems] = useState<Item[]>([{ id: '1', name: '', price: '0', image: '', category: '' }]);
+
+    useEffect(() => {
+        if (items) {
+            setShowingItems(items.slice(0, 100));
+        }
+    }, [items]);
+
+    const showCategory = (category: string) => {
+        setShowingItems(items.filter(item => item.category === category));
+    }
+
+    const showSearch = (search: string) => {
+        if(search) {
+            return setShowingItems(items.filter(item => item.name.includes(search)));
+        }
+        setShowingItems(items.slice(0, 100)); 
+    }
+
+    const itemCategories = items.map(item => item.category); // TODO BE
+    const itemTypes = [...new Set(itemCategories)];
 
     return (
         <div className={styles.FrontPage}>
             <Header />
-            <Menu />
-            <ItemList items={items} />
+            <Menu itemTypes={itemTypes} showCategory={showCategory} showSearch={showSearch}/>
+            <ItemList items={showingItems} />
         </div>
     );
 }
