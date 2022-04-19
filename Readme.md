@@ -1,1 +1,1 @@
-Test and skill recovery
+Test app for react+next
